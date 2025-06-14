@@ -15,7 +15,11 @@ public class ClubsService {
     }
 
     //Endpoint de busqueda con params
-    public List<Clubs> getBySearch(String name){
+    public List<Clubs> getBySearch(String name) {
         return repository.findByNameLike(name);
+    }
+
+    public Clubs createClubs(Clubs clubs) {
+        return repository.save(clubs);
     }
 }

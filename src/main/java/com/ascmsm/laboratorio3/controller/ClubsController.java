@@ -20,4 +20,9 @@ public class ClubsController {
     public List<Clubs> findByName(@PathVariable String name){
         return service.getBySearch(name);
     }
+
+    @PostMapping("/clubs")
+    public Clubs  createClubs(@RequestBody Clubs clubs){
+        return service.createClubs(clubs);
+    }
 }
