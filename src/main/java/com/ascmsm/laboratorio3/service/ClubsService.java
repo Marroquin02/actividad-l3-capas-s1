@@ -22,4 +22,8 @@ public class ClubsService {
     public Clubs createClubs(Clubs clubs) {
         return repository.save(clubs);
     }
+
+    public List<Clubs> getByCountry(String country){
+        return repository.findByCountryLike(country);
+    }
 }

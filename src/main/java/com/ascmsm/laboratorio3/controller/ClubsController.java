@@ -25,4 +25,7 @@ public class ClubsController {
     public Clubs  createClubs(@RequestBody Clubs clubs){
         return service.createClubs(clubs);
     }
+
+    @GetMapping("/country/{country}")
+    public List<Clubs> findByCountry(@PathVariable String country){ return service.getByCountry(country);}
 }
