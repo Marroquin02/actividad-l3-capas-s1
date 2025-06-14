@@ -21,7 +21,7 @@ public class ClubsController {
         return service.getBySearch(name);
     }
 
-    @PostMapping("/clubs")
+    @PostMapping
     public Clubs  createClubs(@RequestBody Clubs clubs){
         return service.createClubs(clubs);
     }
