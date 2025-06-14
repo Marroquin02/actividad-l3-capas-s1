@@ -9,15 +9,15 @@ import java.util.List;
 @RestController
 @RequestMapping("/clubs")
 public class ClubsController {
-    private ClubsService service;
+    private final ClubsService service;
 
     public ClubsController(ClubsService service) {
         this.service = service;
     }
 
     //Endpoint de busqueda con params
-    @GetMapping("/search?name={name}")
-    public List<Clubs> findByName(@PathVariable String name){
+    @GetMapping("/search")
+    public List<Clubs> findByName(@RequestParam String name) {
         return service.getBySearch(name);
     }
 
