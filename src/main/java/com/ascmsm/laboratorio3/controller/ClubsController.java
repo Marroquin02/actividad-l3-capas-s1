@@ -2,6 +2,7 @@ package com.ascmsm.laboratorio3.controller;
 
 import com.ascmsm.laboratorio3.model.Clubs;
 import com.ascmsm.laboratorio3.service.ClubsService;
+import org.springframework.boot.autoconfigure.batch.BatchTransactionManager;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,4 +26,7 @@ public class ClubsController {
     public Clubs  createClubs(@RequestBody Clubs clubs){
         return service.createClubs(clubs);
     }
+
+    @GetMapping("/country/{country}")
+    public List<Clubs> findByCountry(@PathVariable String country){ return service.getByCountry(country);}
 }

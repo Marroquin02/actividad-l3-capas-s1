@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ClubsRepository extends JpaRepository<Clubs, Long> {
     List<Clubs> findByNameLike(String name);
+    List<Clubs> findByCountryLike(String country);
 }
